@@ -16,6 +16,7 @@ Eventbridge Pattern 替换为:
 }
 ```
 配置两个Lambda环境变量
+![如图](/s3/lambda环境变量.png)
 ```
 arn1
 ```
