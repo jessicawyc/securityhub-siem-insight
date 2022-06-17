@@ -15,9 +15,8 @@ https://aws.amazon.com/cn/blogs/security/correlate-security-findings-with-aws-se
 Please see详见: https://github.com/jessicawyc/aws-enable-ess
 
 ### Step2 配置EventBridge
-请参见,根据不同场景,再修改Event Pattern
-https://github.com/jessicawyc/securityhub-alert#2%E8%87%AA%E5%8A%A8%E5%8F%91%E9%80%81%E5%91%8A%E8%AD%A6%E6%A8%A1%E5%BC%8F
-
+具体操作请参见[本文](https://github.com/jessicawyc/securityhub-alert#2%E8%87%AA%E5%8A%A8%E5%8F%91%E9%80%81%E5%91%8A%E8%AD%A6%E6%A8%A1%E5%BC%8F)
+根据不同场景,再修改Event Pattern
 ### Step3 部署Lambda
 #### 配置Lambda要使用的IAM Role
 需要下载两个policy文件到本地
