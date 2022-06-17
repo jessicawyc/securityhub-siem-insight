@@ -3,4 +3,5 @@
 ## 场景
 ### IAM攻击
 ### EC2:Critical vulnerability & external attack
-### S3:public access & sensitive data
+### S3:Public access & sensitive data
+找开公开访问权限的S3中保存有敏感数据
