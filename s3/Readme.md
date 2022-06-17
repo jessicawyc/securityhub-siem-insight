@@ -8,9 +8,6 @@ Eventbridge Pattern 替换为:
     "findings": {
       "ProductName": ["Macie"],
       "RecordState": ["ACTIVE"],
-      "Severity": {
-        "Label": ["HIGH", "CRITICAL"]
-      },
       "Workflow": {
         "Status": ["NEW"]
       }
