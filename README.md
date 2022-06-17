@@ -22,6 +22,7 @@ Please see详见: https://github.com/jessicawyc/aws-enable-ess
 需要下载两个policy文件到本地
 lambdapolicy.json和trust-lambda.json
 因不同SIEM场景各异,可到相应文件夹中下载
+
 参数设置
 ```
 lambdapolicy='lambda-name'
