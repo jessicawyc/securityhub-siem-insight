@@ -7,6 +7,9 @@
   "detail": {
     "findings": {
       "ProductName": ["Macie"],
+      "Severity": {
+        "Label": ["HIGH","LOW","MEDIUM"]
+      },
       "RecordState": ["ACTIVE"],
       "Workflow": {
         "Status": ["NEW"]
