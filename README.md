@@ -49,5 +49,6 @@ ParameterKey=arn2,ParameterValue=$arn2  \
 --capabilities CAPABILITY_IAM \
 --region=$region
 ```
-### Step 3 Configuration Parameters
+Test request
+![snapshot]()
 
