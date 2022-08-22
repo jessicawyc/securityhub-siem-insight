@@ -33,7 +33,7 @@ aws iam put-role-policy --role-name=$rolename --policy-name $lambdapolicy --poli
 Use CLI to create a cloudformation stack or you may use console to do this.
 参数设置
 ```
-stackname='securityhub-siem'
+stackname='securityhub-siem-2'
 templatename='Arch1-template.yaml'
 region='us-east-1'
 arn1='arn:aws:securityhub:::insight/securityhub/default/10'
