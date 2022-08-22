@@ -16,18 +16,10 @@ To be continued
 Please see详见: https://github.com/jessicawyc/aws-enable-ess
 
 ### Step1 Design insights
-Take S3 usercases as an example. we will use aws managed insights.
-参数设置
-```
-
-
-```
-运行CLI命令
-
-```
-rolearn=$(aws iam create-role --role-name $rolename --assume-role-policy-document file://trust-lambda.json --query 'Role.Arn' --output text)
-aws iam put-role-policy --role-name=$rolename --policy-name $lambdapolicy --policy-document file://lambdapolicy.json
-```
+#### S3:Public access & Sensitive data
+For this user case, we  will use aws managed insights.
+'arn:aws:securityhub:::insight/securityhub/default/10'
+'arn:aws:securityhub:::insight/securityhub/default/12'
 
 ### Step2 Deploy by Cloudformation Template
 Use CLI to create a cloudformation stack or you may use console to do this.
