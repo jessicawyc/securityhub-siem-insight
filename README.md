@@ -111,9 +111,9 @@ Use CLI to create a cloudformation stack or you may use console to do this see d
 ```
 stackname='securityhub-siem-2'
 templatename='Sechub-3insight-template.yaml'
-findingtype='TTPs/MITRE ATT&CK'
-title='SIEM Alert-'
-resourcetype='Aws'
+findingtype='TTPs/MITRE ATT&CK/IAMUserAnomalousBehavior'
+title='SIEM Alert-EC2 in under attack in attacking 3 phases'
+resourcetype='AwsEc2Instance'
 
 ```
 运行CLI命令 Run CLI Command
