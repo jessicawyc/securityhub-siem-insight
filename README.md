@@ -16,11 +16,11 @@ To be continued
 Please see详见: https://github.com/jessicawyc/aws-enable-ess
 
 ### Step1 Design insights
-Take S3 usercases as example. we use aws managed insights.
+Take S3 usercases as an example. we will use aws managed insights.
 参数设置
 ```
-lambdapolicy='lambda-name'
-rolename='lambda-siem-name'
+
+
 ```
 运行CLI命令
 
@@ -30,29 +30,24 @@ aws iam put-role-policy --role-name=$rolename --policy-name $lambdapolicy --poli
 ```
 
 ### Step2 Deploy by Cloudformation Template
-
-### Step3 Configuration Parameters
-
-
+Use CLI to create a cloudformation stack or you may use console to do this.
 参数设置
 ```
 stackname='securityhub-siem'
 templatename='Arch1-template.yaml'
+region='us-east-1'
+arn1='arn:aws:securityhub:::insight/securityhub/default/10'
+arn2='arn:aws:securityhub:::insight/securityhub/default/12'
 ```
 运行CLI命令
 
 ```
-for region in $regions; do
 aws cloudformation create-stack --stack-name $stackname --template-body file://$templatename \
 --parameters  \
-ParameterKey=level0,ParameterValue=public  \
-ParameterKey=level1,ParameterValue=internal  \
-ParameterKey=level2,ParameterValue=sensitive  \
+ParameterKey=arn1,ParameterValue=$arn1  \
+ParameterKey=arn2,ParameterValue=$arn2  \
 --capabilities CAPABILITY_IAM \
 --region=$region
-echo $region
-done
-
 ```
-
+### Step3 Configuration Parameters
 
