@@ -131,4 +131,4 @@ ParameterKey=resourcetype,ParameterValue=$resourcetype  \
 --region=$region
 ```
 Test result in securityhub
-![snapshot](IAM/custom-insights.png)
+![snapshot](IAM/securityhub-finding.png)
