@@ -40,9 +40,9 @@ templatename='Sechub-2insight-template.yaml'
 region='us-east-1'
 arn1='arn:aws:securityhub:::insight/securityhub/default/10'
 arn2='arn:aws:securityhub:::insight/securityhub/default/12'
-findingtype=
-title=
-resourcetype=
+findingtype='Software and Configuration Checks/Amazon Security Best Practices'
+title='SIEM Alert-Publicly shared S3 with sensitive data'
+resourcetype='AwsS3Bucket'
 ```
 运行CLI命令
 
@@ -54,7 +54,6 @@ ParameterKey=arn2,ParameterValue=$arn2  \
 ParameterKey=findingtype,ParameterValue=$findingtype  \
 ParameterKey=title,ParameterValue=$title  \
 ParameterKey=resourcetype,ParameterValue=$resourcetype  \
-ParameterKey=arn2,ParameterValue=$arn2  \
 --capabilities CAPABILITY_IAM \
 --region=$region
 ```
