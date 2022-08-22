@@ -15,13 +15,17 @@ To be continued
 ### Prerequisites Enable SecurityHub with Other ESS service 打开相关服务
 Please see详见: https://github.com/jessicawyc/aws-enable-ess
 
-### Step1 Design insights
+### Step 1 Design insights
 #### S3:Public access & Sensitive data
 For this user case, we  will use aws managed insights.
-'arn:aws:securityhub:::insight/securityhub/default/10'
-'arn:aws:securityhub:::insight/securityhub/default/12'
+2. S3 buckets with public write or read permissions
+10. S3 buckets with sensitive data
+You may find the arn in the offical document and give the arn to parameter in step 2
+https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-managed-insights.html
 
-### Step2 Deploy by Cloudformation Template
+
+
+### Step 2 Deploy by Cloudformation Template
 Use CLI to create a cloudformation stack or you may use console to do this.
 参数设置
 ```
