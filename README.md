@@ -34,7 +34,7 @@ Use CLI to create a cloudformation stack or you may use console to do this see d
 参数设置
 ```
 stackname='securityhub-siem-2'
-templatename='Arch1-template.yaml'
+templatename='Sechub-2insight-template.yaml'
 region='us-east-1'
 arn1='arn:aws:securityhub:::insight/securityhub/default/10'
 arn2='arn:aws:securityhub:::insight/securityhub/default/12'
