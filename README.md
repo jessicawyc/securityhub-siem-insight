@@ -15,7 +15,8 @@ To be continued
 ### Prerequisites Enable SecurityHub with Other ESS service 打开相关服务
 Please see详见: https://github.com/jessicawyc/aws-enable-ess
 
-### Step1 Create custom insights
+### Step1 Design insights
+Take S3 usercases as example. we use aws managed insights.
 参数设置
 ```
 lambdapolicy='lambda-name'
