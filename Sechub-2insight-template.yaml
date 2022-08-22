@@ -131,7 +131,7 @@ Resources:
               }],
               "Note": {
                   "Text": "Please review the incident and take actions",
-                  "UpdatedBy":"macie finding",
+                  "UpdatedBy":"lambda",
                   "UpdatedAt":new_recorded_time
               }
           }
