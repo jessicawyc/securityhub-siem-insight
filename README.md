@@ -109,7 +109,7 @@ Use CLI to create a cloudformation stack or you may use console to do this see d
 
 参数设置 Set Paramter
 ```
-stackname='securityhub-siem-2'
+stackname='securityhub-siem-3IAM'
 templatename='Sechub-3insight-template.yaml'
 findingtype='TTPs/MITRE ATT&CK/IAMUserAnomalousBehavior'
 title='SIEM Alert-EC2 in under attack in attacking 3 phases'
