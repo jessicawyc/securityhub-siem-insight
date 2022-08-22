@@ -8,12 +8,11 @@ https://aws.amazon.com/cn/blogs/security/correlate-security-findings-with-aws-se
 ## 场景 User Cases
 ### IAM Attack
 ### EC2:Critical vulnerability & External attack
-
-To be continued
-
-## Deployment for User case :S3:[Public access & Sensitive data](/s3/Readme.md) 部署第一个user case
 ### Prerequisites Enable SecurityHub with Other ESS service 打开相关服务
 Please see详见: https://github.com/jessicawyc/aws-enable-ess
+
+## Deployment for User case :S3:[Public access & Sensitive data](/s3/Readme.md) 部署第一个user case
+
 
 ### Step 1 Design insights
 #### S3:Public access & Sensitive data
@@ -52,3 +51,54 @@ ParameterKey=arn2,ParameterValue=$arn2  \
 Test result in securityhub
 ![snapshot](s3/SIEM-Alert.png)
 
+## Deployment for User case 2 :IAM attack 部署第二个user case
+
+### Step 1 Design insights
+
+For this user case, we  will use 3 cutome insights, use below CLI to create and get the arn:
+参数设置 Set Paramter
+```
+stackname='securityhub-siem-2'
+templatename='Sechub-2insight-template.yaml'
+region='us-east-1'
+arn1='arn:aws:securityhub:::insight/securityhub/default/10'
+arn2='arn:aws:securityhub:::insight/securityhub/default/12'
+```
+运行CLI命令 Run CLI Command
+
+```
+aws cloudformation create-stack --stack-name $stackname --template-body file://$templatename \
+--parameters  \
+ParameterKey=arn1,ParameterValue=$arn1  \
+ParameterKey=arn2,ParameterValue=$arn2  \
+--capabilities CAPABILITY_IAM \
+--region=$region
+```
+
+
+
+
+
+### Step 2 Deploy by Cloudformation Template
+Use CLI to create a cloudformation stack or you may use console to do this see detail steps in https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-login.html.
+
+参数设置 Set Paramter
+```
+stackname='securityhub-siem-2'
+templatename='Sechub-2insight-template.yaml'
+region='us-east-1'
+arn1='arn:aws:securityhub:::insight/securityhub/default/10'
+arn2='arn:aws:securityhub:::insight/securityhub/default/12'
+```
+运行CLI命令 Run CLI Command
+
+```
+aws cloudformation create-stack --stack-name $stackname --template-body file://$templatename \
+--parameters  \
+ParameterKey=arn1,ParameterValue=$arn1  \
+ParameterKey=arn2,ParameterValue=$arn2  \
+--capabilities CAPABILITY_IAM \
+--region=$region
+```
+Test result in securityhub
+![snapshot](s3/SIEM-Alert.png)
