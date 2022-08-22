@@ -1,4 +1,4 @@
-# securityhub-siem-insight
+# Securityhub-siem-insight
 使用securityhub的insight,对威胁特定的场景,自动生成一条Critical告警.
 ## 架构 Architecture
 SecurityHub可以通过两种方式成为SIEM,左侧第一种请详见Global Security Blog
