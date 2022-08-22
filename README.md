@@ -35,14 +35,23 @@ aws iam put-role-policy --role-name=$rolename --policy-name $lambdapolicy --poli
 
 参数设置
 ```
-lambdapolicy='lambda-name'
-rolename='lambda-siem-name'
+stackname='securityhub-siem'
+templatename='Arch1-template.yaml'
 ```
 运行CLI命令
 
 ```
-rolearn=$(aws iam create-role --role-name $rolename --assume-role-policy-document file://trust-lambda.json --query 'Role.Arn' --output text)
-aws iam put-role-policy --role-name=$rolename --policy-name $lambdapolicy --policy-document file://lambdapolicy.json
+for region in $regions; do
+aws cloudformation create-stack --stack-name $stackname --template-body file://$templatename \
+--parameters  \
+ParameterKey=level0,ParameterValue=public  \
+ParameterKey=level1,ParameterValue=internal  \
+ParameterKey=level2,ParameterValue=sensitive  \
+--capabilities CAPABILITY_IAM \
+--region=$region
+echo $region
+done
+
 ```
 
 
