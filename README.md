@@ -1,10 +1,11 @@
 # Securityhub-siem-insight
 使用securityhub的insight,对威胁特定的场景,自动生成一条Critical告警.
 ## 架构 Architecture
-SecurityHub可以通过两种方式成为SIEM,左侧第一种请详见Global Security Blog
+SecurityHub可以通过两种方式成为SIEM,左侧第一种请详见Global Security Blog本文提供右侧方式的多个场景
+There are two ways to correlate finding in securityhub as below, the left side using dynamoDB, you may refer below blog. In this blog, I will show you the architecure in the right side,by using insights.
 https://aws.amazon.com/cn/blogs/security/correlate-security-findings-with-aws-security-hub-and-amazon-eventbridge/
 ![arch](/SIEM-2-Architecture.png)
-本文提供右侧方式的多个场景
+
 ## 场景 User Cases
 ### IAM Attack
 ### EC2:Critical vulnerability & External attack
