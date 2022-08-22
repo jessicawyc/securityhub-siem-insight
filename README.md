@@ -29,7 +29,8 @@ https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-managed-ins
 
 
 ### Step 2 Deploy by Cloudformation Template
-Use CLI to create a cloudformation stack or you may use console to do this.
+Use CLI to create a cloudformation stack or you may use console to do this see detail steps in https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-login.html.
+
 参数设置
 ```
 stackname='securityhub-siem-2'
