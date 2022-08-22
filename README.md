@@ -49,5 +49,5 @@ ParameterKey=arn2,ParameterValue=$arn2  \
 --capabilities CAPABILITY_IAM \
 --region=$region
 ```
-### Step3 Configuration Parameters
+### Step 3 Configuration Parameters
 
