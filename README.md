@@ -19,9 +19,9 @@ Please see详见: https://github.com/jessicawyc/aws-enable-ess
 #### S3:Public access & Sensitive data
 For this user case, we  will use aws managed insights:
 
-  2. S3 buckets with public write or read permissions
+  "2. S3 buckets with public write or read permissions"
 
-  10. S3 buckets with sensitive data
+  "10. S3 buckets with sensitive data"
 
 You may find the arn in the offical document and give the arn to parameter in step 2
 https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-managed-insights.html
