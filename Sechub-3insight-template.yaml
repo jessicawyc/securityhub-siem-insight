@@ -145,7 +145,7 @@ Resources:
               logger.info('inquerying insight result for this user case...')
               group1=getinsight(os.environ['arn1'])
               group2=getinsight(os.environ['arn2'])
-              group2=getinsight(os.environ['arn3'])
+              group3=getinsight(os.environ['arn3'])
               resourceids=[x for x in group1 if x in group2 if x in group3]
               if len(resourceids)>0:
                   logger.info("SIEM is triggered")
