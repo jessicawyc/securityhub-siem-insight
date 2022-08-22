@@ -110,7 +110,7 @@ Use CLI to create a cloudformation stack or you may use console to do this see d
 参数设置 Set Paramter
 ```
 stackname='securityhub-siem-2'
-templatename='Sechub-2insight-template.yaml'
+templatename='Sechub-3insight-template.yaml'
 
 ```
 运行CLI命令 Run CLI Command
@@ -120,6 +120,7 @@ aws cloudformation create-stack --stack-name $stackname --template-body file://$
 --parameters  \
 ParameterKey=arn1,ParameterValue=$arn1  \
 ParameterKey=arn2,ParameterValue=$arn2  \
+ParameterKey=arn3,ParameterValue=$arn3  \
 --capabilities CAPABILITY_IAM \
 --region=$region
 ```
