@@ -8,10 +8,10 @@ https://aws.amazon.com/cn/blogs/security/correlate-security-findings-with-aws-se
 ## 场景 User Cases
 ### IAM Attack
 ### EC2:Critical vulnerability & External attack
-### S3:[Public access & Sensitive data](/s3/Readme.md)
+
 To be continued
 
-## Deployment部署
+## Deployment for User case :S3:[Public access & Sensitive data](/s3/Readme.md) 部署第一个user case
 ### Prerequisites Enable SecurityHub with Other ESS service 打开相关服务
 Please see详见: https://github.com/jessicawyc/aws-enable-ess
 
