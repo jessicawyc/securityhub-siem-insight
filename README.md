@@ -67,14 +67,46 @@ Test result in securityhub
 For this user case, we  will use 3 cutome insights, you may follow the guide https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html#:~:text=include%20both%20resources.-,Creating%20a%20custom%20insight%20(console),-From%20the%20console to create in console,
 or use CLI
 
-use below CLI to create and get the arn:
+use below CLI to create and get the arn of three custom insights:
+
+参数设置 Set Paramter
+```
+region='eu-west-2'
+insight1='usecase2-1-InitialAccess'
+insight2='usecase2-2-Persistence'
+insight3='usecase2-3-PrivilegeEscalation'
+```
+运行CLI命令 Run CLI Command
+
+```
+arn1=$(aws securityhub create-insight \
+--filters \
+ '{"RecordState": [{ "Comparison": "EQUALS", "Value": "ACTIVE"}], "WorkflowStatus": [{"Comparison": "EQUALS", "Value": "NEW"}],"ResourceType": [{"Comparison": "EQUALS", "Value": "AwsEc2Instance"}], "Type": [{"Comparison": "PREFIX", "Value": "TTPs/Initial Access"}]}' \
+ --group-by-attribute "ResourceId" \
+--name $insight1 \
+--query 'InsightArn' --output text --region=$region)
+echo $arn1
+arn2=$(aws securityhub create-insight \
+--filters \
+ '{"RecordState": [{ "Comparison": "EQUALS", "Value": "ACTIVE"}], "WorkflowStatus": [{"Comparison": "EQUALS", "Value": "NEW"}],"ResourceType": [{"Comparison": "EQUALS", "Value": "AwsEc2Instance"}], "Type": [{"Comparison": "PREFIX", "Value": "TTPs/Persistence"}]}' \
+ --group-by-attribute "ResourceId" \
+--name $insight2 \
+--query 'InsightArn' --output text --region=$region)
+echo $arn2
+arn3=$(aws securityhub create-insight \
+--filters \
+ '{"RecordState": [{ "Comparison": "EQUALS", "Value": "ACTIVE"}], "WorkflowStatus": [{"Comparison": "EQUALS", "Value": "NEW"}],"ResourceType": [{"Comparison": "EQUALS", "Value": "AwsEc2Instance"}], "Type": [{"Comparison": "PREFIX", "Value": "TTPs/Privilege Escalation"}]}' \
+ --group-by-attribute "ResourceId" \
+--name $insight3 \
+--query 'InsightArn' --output text --region=$region)
+echo $arn3
+```
 参数设置 Set Paramter
 ```
 stackname='securityhub-siem-2'
 templatename='Sechub-2insight-template.yaml'
 region='us-east-1'
-arn1='arn:aws:securityhub:::insight/securityhub/default/10'
-arn2='arn:aws:securityhub:::insight/securityhub/default/12'
+
 ```
 运行CLI命令 Run CLI Command
 
