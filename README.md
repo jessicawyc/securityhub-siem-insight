@@ -68,6 +68,7 @@ For this user case, we  will use 3 cutome insights, you may follow the guide htt
 or use CLI
 
 use below CLI to create and get the arn of three custom insights:
+
 参数设置 Set Paramter
 ```
 region='eu-west-2'
