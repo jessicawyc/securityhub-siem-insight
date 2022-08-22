@@ -101,27 +101,8 @@ arn3=$(aws securityhub create-insight \
 --query 'InsightArn' --output text --region=$region)
 echo $arn3
 ```
-参数设置 Set Paramter
-```
-stackname='securityhub-siem-2'
-templatename='Sechub-2insight-template.yaml'
-region='us-east-1'
-
-```
-运行CLI命令 Run CLI Command
-
-```
-aws cloudformation create-stack --stack-name $stackname --template-body file://$templatename \
---parameters  \
-ParameterKey=arn1,ParameterValue=$arn1  \
-ParameterKey=arn2,ParameterValue=$arn2  \
---capabilities CAPABILITY_IAM \
---region=$region
-```
-
-
-
-
+If you check the console, you will see 3 custom insights are created 
+![snapshot](IAM/custom-insights.png)
 
 ### Step 2 Deploy by Cloudformation Template
 Use CLI to create a cloudformation stack or you may use console to do this see detail steps in https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-login.html.
@@ -130,9 +111,7 @@ Use CLI to create a cloudformation stack or you may use console to do this see d
 ```
 stackname='securityhub-siem-2'
 templatename='Sechub-2insight-template.yaml'
-region='us-east-1'
-arn1='arn:aws:securityhub:::insight/securityhub/default/10'
-arn2='arn:aws:securityhub:::insight/securityhub/default/12'
+
 ```
 运行CLI命令 Run CLI Command
 
@@ -145,4 +124,4 @@ ParameterKey=arn2,ParameterValue=$arn2  \
 --region=$region
 ```
 Test result in securityhub
-![snapshot](s3/SIEM-Alert.png)
+![snapshot](IAM/custom-insights.png)
