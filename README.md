@@ -40,6 +40,9 @@ templatename='Sechub-2insight-template.yaml'
 region='us-east-1'
 arn1='arn:aws:securityhub:::insight/securityhub/default/10'
 arn2='arn:aws:securityhub:::insight/securityhub/default/12'
+findingtype=
+title=
+resourcetype=
 ```
 运行CLI命令
 
@@ -47,6 +50,10 @@ arn2='arn:aws:securityhub:::insight/securityhub/default/12'
 aws cloudformation create-stack --stack-name $stackname --template-body file://$templatename \
 --parameters  \
 ParameterKey=arn1,ParameterValue=$arn1  \
+ParameterKey=arn2,ParameterValue=$arn2  \
+ParameterKey=findingtype,ParameterValue=$findingtype  \
+ParameterKey=title,ParameterValue=$title  \
+ParameterKey=resourcetype,ParameterValue=$resourcetype  \
 ParameterKey=arn2,ParameterValue=$arn2  \
 --capabilities CAPABILITY_IAM \
 --region=$region
