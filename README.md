@@ -64,7 +64,10 @@ Test result in securityhub
 
 ### Step 1 Design insights
 
-For this user case, we  will use 3 cutome insights, use below CLI to create and get the arn:
+For this user case, we  will use 3 cutome insights, you may follow the guide https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html#:~:text=include%20both%20resources.-,Creating%20a%20custom%20insight%20(console),-From%20the%20console to create in console,
+or use CLI
+
+use below CLI to create and get the arn:
 参数设置 Set Paramter
 ```
 stackname='securityhub-siem-2'
