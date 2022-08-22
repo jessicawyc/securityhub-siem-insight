@@ -75,6 +75,31 @@ insight1='usercase2-1-InitialAccess'
 insight2='usercase2-2-Persistence'
 insight3='usecase2-3-PrivilegeEscalation'
 ```
+运行CLI命令 Run CLI Command
+
+```
+arn1=$(aws securityhub create-insight \
+--filters \
+ '{"RecordState": [{ "Comparison": "EQUALS", "Value": "ACTIVE"}], "WorkflowStatus": [{"Comparison": "EQUALS", "Value": "NEW"}],"ResourceType": [{"Comparison": "EQUALS", "Value": "AwsEc2Instance"}], "Type": [{"Comparison": "PREFIX", "Value": "TTPs/Initial Access"}]}' \
+ --group-by-attribute "ResourceId" \
+--name $insight1 \
+--query 'InsightArn' --output text --region=$region)
+echo $arn1
+arn2=$(aws securityhub create-insight \
+--filters \
+ '{"RecordState": [{ "Comparison": "EQUALS", "Value": "ACTIVE"}], "WorkflowStatus": [{"Comparison": "EQUALS", "Value": "NEW"}],"ResourceType": [{"Comparison": "EQUALS", "Value": "AwsEc2Instance"}], "Type": [{"Comparison": "PREFIX", "Value": "TTPs/Persistence"}]}' \
+ --group-by-attribute "ResourceId" \
+--name $insight2 \
+--query 'InsightArn' --output text --region=$region)
+echo $arn2
+arn3=$(aws securityhub create-insight \
+--filters \
+ '{"RecordState": [{ "Comparison": "EQUALS", "Value": "ACTIVE"}], "WorkflowStatus": [{"Comparison": "EQUALS", "Value": "NEW"}],"ResourceType": [{"Comparison": "EQUALS", "Value": "AwsEc2Instance"}], "Type": [{"Comparison": "PREFIX", "Value": "TTPs/Privilege Escalation"}]}' \
+ --group-by-attribute "ResourceId" \
+--name $insight3 \
+--query 'InsightArn' --output text --region=$region)
+echo $arn3
+```
 参数设置 Set Paramter
 ```
 stackname='securityhub-siem-2'
