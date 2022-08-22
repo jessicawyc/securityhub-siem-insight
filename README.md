@@ -71,8 +71,8 @@ use below CLI to create and get the arn of three custom insights:
 参数设置 Set Paramter
 ```
 region='eu-west-2'
-insight1='usercase2-1-InitialAccess'
-insight2='usercase2-2-Persistence'
+insight1='usecase2-1-InitialAccess'
+insight2='usecase2-2-Persistence'
 insight3='usecase2-3-PrivilegeEscalation'
 ```
 运行CLI命令 Run CLI Command
