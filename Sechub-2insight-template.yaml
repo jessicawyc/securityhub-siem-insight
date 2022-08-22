@@ -24,7 +24,7 @@ Resources:
   EventRule:
     Type: 'AWS::Events::Rule'
     Properties:
-      Description: EventRule
+      Description: EventRule detect macie finding in securityhub to trigger lambda
       EventPattern:
         source:
           - aws.securityhub
@@ -180,7 +180,7 @@ Resources:
             Action:
               - 'sts:AssumeRole'
       Policies:
-        - PolicyName: sime-macie-eb-lambda-policy
+        - PolicyName: siem2-macie-eb-lambda-policy
           PolicyDocument:
             Statement:
               - Effect: Allow

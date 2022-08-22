@@ -28,24 +28,8 @@ Resources:
   EventRule:
     Type: 'AWS::Events::Rule'
     Properties:
-      Description: EventRule
-      EventPattern:
-        source:
-          - aws.securityhub
-        detail-type:
-          - Security Hub Findings - Imported
-        detail:
-          findings:
-            ProductName:
-              - Macie
-            Types:
-              - prefix: Sensitive Data Identifications
-           
-            Workflow:
-              Status:
-                - NEW
-            RecordState:
-              - ACTIVE
+      Description: scheduled rule to trigger lambda
+      ScheduleExpression: rate(1 minutes)
       State: ENABLED
       Targets:
         - Arn:
@@ -154,13 +138,14 @@ Resources:
           def lambda_handler(event, context):
               group1=[]
               group2=[]
+              group3=[]
               aws_account_id = event["account"]
               region = event['region']
-              #查询insight1和2的结果 inqury the result from both insights
+              #查询insight1,2,3的结果 inqury the result from all three insights
               logger.info('inquerying insight result for this user case...')
               group1=getinsight(os.environ['arn1'])
               group2=getinsight(os.environ['arn2'])
-              resourceids=[x for x in group1 if x in group2]
+              resourceids=[x for x in group1 if x in group2 if x in group3]
               if len(resourceids)>0:
                   logger.info("SIEM is triggered")
                   for each in resourceids:
@@ -185,7 +170,7 @@ Resources:
             Action:
               - 'sts:AssumeRole'
       Policies:
-        - PolicyName: sime-macie-eb-lambda-policy
+        - PolicyName: siem3-eb-lambda-policy
           PolicyDocument:
             Statement:
               - Effect: Allow
