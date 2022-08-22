@@ -29,7 +29,7 @@ Resources:
     Type: 'AWS::Events::Rule'
     Properties:
       Description: scheduled rule to trigger lambda
-      ScheduleExpression: rate(1 minutes)
+      ScheduleExpression: rate(2 minutes)
       State: ENABLED
       Targets:
         - Arn:
@@ -145,13 +145,14 @@ Resources:
               logger.info('inquerying insight result for this user case...')
               group1=getinsight(os.environ['arn1'])
               group2=getinsight(os.environ['arn2'])
+              group2=getinsight(os.environ['arn3'])
               resourceids=[x for x in group1 if x in group2 if x in group3]
               if len(resourceids)>0:
                   logger.info("SIEM is triggered")
                   for each in resourceids:
                       create_securityhub_finding (aws_account_id,region,each)  #生成一条new finding写入Securityhub, for each resourceid ,write a new critical finding in securityhub
               else:
-                  logger.info('The user case is not triggered')
+                  logger.info('The usecase is not triggered')
               return(resourceids)
       Description: user case for s3 which set public access and has sensitive data,triggered by macie sensitive data finding from eventbridge rule
       TracingConfig:
