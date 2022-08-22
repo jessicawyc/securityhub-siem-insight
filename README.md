@@ -49,6 +49,6 @@ ParameterKey=arn2,ParameterValue=$arn2  \
 --capabilities CAPABILITY_IAM \
 --region=$region
 ```
-Test request
+Test result in securityhub
 ![snapshot](s3/SIEM-Alert.png)
 
