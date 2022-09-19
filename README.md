@@ -55,13 +55,8 @@ Test result in securityhub
 ![snapshot](s3/SIEM-Alert.png)
 
 ## Deployment for User case 2 :IAM attack in 3 Phases 部署第二个user case
-
 ### Step 1 Design insights
-
-For this user case, we  will use 3 cutome insights, you may follow the [offical guide](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html#:~:text=include%20both%20resources.-,Creating%20a%20custom%20insight%20(console),-From%20the%20console )to create custom insights in console or use CLI command.
-
-Use below CLI to create and get the arn of three custom insights:
-
+For this user case, we  will use 3 custom insights, you may follow the [offical guide](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html#:~:text=include%20both%20resources.-,Creating%20a%20custom%20insight%20(console),-From%20the%20console )to create custom insights in console or use CLI command below.
 参数设置 Set Paramter
 ```
 region='eu-west-2'
@@ -127,6 +122,7 @@ Test result in securityhub
 ![snapshot](IAM/securityhub-finding.png)
 ## Deployment for User case 3 :S3 delete & No versioning 部署第三个user case
 ### Step 1 Design insights
+For this user case, we  will use 3 custom insights, you may follow the [offical guide](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html#:~:text=include%20both%20resources.-,Creating%20a%20custom%20insight%20(console),-From%20the%20console )to create custom insights in console or use CLI command below.
 ### Step 2 Deploy by Cloudformation Template
 Test result in securityhub
 ![snapshot](IAM/securityhub-finding.png)
