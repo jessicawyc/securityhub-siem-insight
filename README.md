@@ -115,17 +115,21 @@ ParameterKey=resourcetype,ParameterValue=$resourcetype  \
 ```
 Test result in securityhub
 ![snapshot](IAM/securityhub-finding.png)
+------------------------------------------------------------
 ## Deployment for User case 3 :S3 delete & No versioning 部署第三个user case
-### Step 1 Design insights
+### Step 1 Create Config Rule
+s3-bucket-versioning-enabled
+
+### Step 2 Design insights
 For this user case, we  will use 3 custom insights, you may follow the [offical guide](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html#:~:text=include%20both%20resources.-,Creating%20a%20custom%20insight%20(console),-From%20the%20console )to create custom insights in console or use CLI command below.
 参数设置 Set Paramter
 ```
 region='eu-west-2'
 insight1='usecase3-1-guarddutys3delete'
-insight2='usecase3-2-fsbps3versionging'
+insight2='usecase3-2-configs3versioning'
 ```
 运行CLI命令 Run CLI Command
-### Step 2 Deploy by Cloudformation Template
+### Step 3 Deploy by Cloudformation Template
 参数设置 Set Paramter
 ```
 stackname='securityhub-siem3-s3delete'
