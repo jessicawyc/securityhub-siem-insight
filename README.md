@@ -5,7 +5,8 @@ Please see详见: https://github.com/jessicawyc/aws-enable-ess
 ## 架构 Architecture
 SecurityHub可以通过两种方式成为SIEM,左侧第一种请详见Global Security Blog本文提供右侧方式的多个场景.
 
-There are two ways to correlate finding in securityhub as below, the left side using dynamoDB, you may refer this [offical blog](https://aws.amazon.com/cn/blogs/security/correlate-security-findings-with-aws-security-hub-and-amazon-eventbridge/). In this blog, I will show you the architecure in the right side,by using insights.
+There are two ways to correlate finding in securityhub as below, the left side using dynamoDB, you may refer this [offical blog](https://aws.amazon.com/cn/blogs/security/correlate-security-findings-with-aws-security-hub-and-amazon-eventbridge/). 
+In this article, I will show you the architecure in the right side,by using insights with lambda.
 ![arch](/SIEM-2-Architecture.png)
 ## 场景 User Cases
 ## Deployment for User case 1:S3:Public access & Sensitive data
