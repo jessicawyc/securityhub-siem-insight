@@ -130,7 +130,7 @@ insight2='usecase3-2-fsbps3versionging'
 ```
 stackname='securityhub-siem3-s3delete'
 templatename='Sechub-2insight-template.yaml'
-findingtype='Software and Configuration Checks/Amazon Security Best Practices'
+findingtype='Effects/Data Exposure/S3DataLost'
 title='SIEM Alert-S3 data lost'
 resourcetype='AwsS3Bucket'
 
@@ -149,4 +149,4 @@ ParameterKey=resourcetype,ParameterValue=$resourcetype  \
 --region=$region
 ```
 Test result in securityhub
-![snapshot](IAM/securityhub-finding.png)
+![snapshot](s3/securityhub-finding.png)
