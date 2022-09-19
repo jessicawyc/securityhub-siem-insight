@@ -137,7 +137,8 @@ templatename='Sechub-2insight-template.yaml'
 findingtype='Effects/Data Exposure/S3DataLost'
 title='SIEM Alert-S3 data lost'
 resourcetype='AwsS3Bucket'
-
+arn1='arn:aws:securityhub:eu-west-2:295158943844:insight/295158943844/custom/6f23f5cc-74d5-4284-bb5c-96835fb014c'
+arn2=''
 ```
 运行CLI命令 Run CLI command
 
@@ -153,4 +154,4 @@ ParameterKey=resourcetype,ParameterValue=$resourcetype  \
 --region=$region
 ```
 Test result in securityhub
-![snapshot](s3/securityhub-finding.png)
+![snapshot](s3/sample.png)
