@@ -48,7 +48,7 @@ ParameterKey=resourcetype,ParameterValue=$resourcetype  \
 ```
 Test result in securityhub
 ![snapshot](s3/SIEM-Alert.png)
-
+--------------------------------------------------------------------------------------------
 ## Deployment for User case 2 :IAM attack in 3 Phases 部署第二个user case
 ### Step 1 Design insights
 For this user case, we  will use 3 custom insights, you may follow the [offical guide](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html#:~:text=include%20both%20resources.-,Creating%20a%20custom%20insight%20(console),-From%20the%20console )to create custom insights in console or use CLI command below.
@@ -118,6 +118,35 @@ Test result in securityhub
 ## Deployment for User case 3 :S3 delete & No versioning 部署第三个user case
 ### Step 1 Design insights
 For this user case, we  will use 3 custom insights, you may follow the [offical guide](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html#:~:text=include%20both%20resources.-,Creating%20a%20custom%20insight%20(console),-From%20the%20console )to create custom insights in console or use CLI command below.
+参数设置 Set Paramter
+```
+region='eu-west-2'
+insight1='usecase3-1-guarddutys3delete'
+insight2='usecase3-2-fsbps3versionging'
+```
+运行CLI命令 Run CLI Command
 ### Step 2 Deploy by Cloudformation Template
+参数设置 Set Paramter
+```
+stackname='securityhub-siem3-s3delete'
+templatename='Sechub-2insight-template.yaml'
+findingtype='Software and Configuration Checks/Amazon Security Best Practices'
+title='SIEM Alert-S3 data lost'
+resourcetype='AwsS3Bucket'
+
+```
+运行CLI命令 Run CLI command
+
+```
+aws cloudformation create-stack --stack-name $stackname --template-body file://$templatename \
+--parameters  \
+ParameterKey=arn1,ParameterValue=$arn1  \
+ParameterKey=arn2,ParameterValue=$arn2  \
+ParameterKey=findingtype,ParameterValue=$findingtype  \
+ParameterKey=title,ParameterValue=$title  \
+ParameterKey=resourcetype,ParameterValue=$resourcetype  \
+--capabilities CAPABILITY_IAM \
+--region=$region
+```
 Test result in securityhub
 ![snapshot](IAM/securityhub-finding.png)
