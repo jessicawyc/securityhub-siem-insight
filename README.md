@@ -1,6 +1,7 @@
 # Securityhub Simple Way to build up your user cases with insights
 使用securityhub的insight,对威胁特定的场景,自动生成一条Critical告警.
-## Prerequisites Enable SecurityHub with Other ESS service 打开相关服务
+## Prerequisites
+Enable SecurityHub with Other ESS service,set aggregated region for securityhub
 Please see详见: https://github.com/jessicawyc/aws-enable-ess
 ## 架构 Architecture
 SecurityHub可以通过两种方式成为SIEM,左侧第一种请详见Global Security Blog本文提供右侧方式的多个场景.
