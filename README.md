@@ -58,7 +58,7 @@ Test result in securityhub
 
 ### Step 1 Design insights
 
-For this user case, we  will use 3 cutome insights, you may follow the [offical guide] (https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html#:~:text=include%20both%20resources.-,Creating%20a%20custom%20insight%20(console),-From%20the%20console )to create custom insights in console or use CLI command.
+For this user case, we  will use 3 cutome insights, you may follow the [offical guide](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html#:~:text=include%20both%20resources.-,Creating%20a%20custom%20insight%20(console),-From%20the%20console )to create custom insights in console or use CLI command.
 
 Use below CLI to create and get the arn of three custom insights:
 
@@ -98,7 +98,7 @@ If you check the console, you will see 3 custom insights are created
 ![snapshot](IAM/custom-insights.png)
 
 ### Step 2 Deploy by Cloudformation Template
-Use CLI to create a cloudformation stack or you may use console to do this see detail steps in https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-login.html.
+Use CLI to create a cloudformation stack or you may use console to do this see detail steps in [official document](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-login.html)
 
 参数设置 Set Paramter
 ```
@@ -123,5 +123,10 @@ ParameterKey=resourcetype,ParameterValue=$resourcetype  \
 --capabilities CAPABILITY_IAM \
 --region=$region
 ```
+Test result in securityhub
+![snapshot](IAM/securityhub-finding.png)
+## Deployment for User case 3 :S3 delete & No versioning 部署第三个user case
+### Step 1 Design insights
+### Step 2 Deploy by Cloudformation Template
 Test result in securityhub
 ![snapshot](IAM/securityhub-finding.png)
