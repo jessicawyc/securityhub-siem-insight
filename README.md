@@ -5,22 +5,15 @@ Please see详见: https://github.com/jessicawyc/aws-enable-ess
 ## 架构 Architecture
 SecurityHub可以通过两种方式成为SIEM,左侧第一种请详见Global Security Blog本文提供右侧方式的多个场景.
 
-There are two ways to correlate finding in securityhub as below, the left side using dynamoDB, you may refer below blog. In this blog, I will show you the architecure in the right side,by using insights.
-
-https://aws.amazon.com/cn/blogs/security/correlate-security-findings-with-aws-security-hub-and-amazon-eventbridge/
+There are two ways to correlate finding in securityhub as below, the left side using dynamoDB, you may refer this [offical blog](https://aws.amazon.com/cn/blogs/security/correlate-security-findings-with-aws-security-hub-and-amazon-eventbridge/). In this blog, I will show you the architecure in the right side,by using insights.
 ![arch](/SIEM-2-Architecture.png)
-
 ## 场景 User Cases
-
 ## Deployment for User case 1:S3:Public access & Sensitive data
 S3:[Public access & Sensitive data](/s3/Readme.md) 部署第一个user case
 ### Step 1 Design insights
 For this user case, we  will use aws managed insights:
-
   "2. S3 buckets with public write or read permissions"
-
   "10. S3 buckets with sensitive data"
-
 You may find the arn in the offical document and give the arn to parameter in step 2
 https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-managed-insights.html
 
