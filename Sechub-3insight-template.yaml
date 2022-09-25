@@ -29,7 +29,7 @@ Resources:
     Type: 'AWS::Events::Rule'
     Properties:
       Description: scheduled rule to trigger lambda
-      ScheduleExpression: rate(2 minutes)
+      ScheduleExpression: rate(59 minutes)
       State: ENABLED
       Targets:
         - Arn:

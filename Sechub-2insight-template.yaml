@@ -34,9 +34,11 @@ Resources:
           findings:
             ProductName:
               - Macie
-            Types:
-              - prefix: Sensitive Data Identifications
-           
+              - GuardDuty
+              - Inspector
+              - IAM Access Analyzer
+              - Firewall Manager
+              - Config
             Workflow:
               Status:
                 - NEW
