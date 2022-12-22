@@ -139,6 +139,7 @@ arn1=$(aws securityhub create-insight \
 --name $insight1 \
 --query 'InsightArn' --output text --region=$region)
 echo $arn1
+
 arn2=$(aws securityhub create-insight \
 --filters \
  '{"RecordState": [{ "Comparison": "EQUALS", "Value": "ACTIVE"}], "WorkflowStatus": [{"Comparison": "EQUALS", "Value": "NEW"}],"ResourceType": [{"Comparison": "EQUALS", "Value": "AwsEc2Instance"}], "Type": [{"Comparison": "PREFIX", "Value": "TTPs/Persistence"}]}' \
