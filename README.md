@@ -134,7 +134,7 @@ insight2='usecase3-2-configs3versioning'
 ```
 arn1=$(aws securityhub create-insight \
 --filters \
- '{"RecordState": [{ "Comparison": "EQUALS", "Value": "ACTIVE"}], "WorkflowStatus": [{"Comparison": "EQUALS", "Value": "NEW"}],"ResourceType": [{"Comparison": "EQUALS", "Value": "AwsEc2Instance"}], "Type": [{"Comparison": "PREFIX", "Value": "TTPs/Initial Access"}]}' \
+ '{"RecordState": [{ "Comparison": "EQUALS", "Value": "ACTIVE"}], "WorkflowStatus": [{"Comparison": "EQUALS", "Value": "NEW"}],"ProductName": [{"Comparison": "EQUALS", "Value": "Config"}], "ComplianceStatus": [{"Comparison": "EQUALS", "Value": "FAILED"}]}' \
  --group-by-attribute "ResourceId" \
 --name $insight1 \
 --query 'InsightArn' --output text --region=$region)
