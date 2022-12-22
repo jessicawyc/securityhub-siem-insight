@@ -142,7 +142,7 @@ echo $arn1
 
 arn2=$(aws securityhub create-insight \
 --filters \
- '{"RecordState": [{ "Comparison": "EQUALS", "Value": "ACTIVE"}], "WorkflowStatus": [{"Comparison": "EQUALS", "Value": "NEW"}],"ResourceType": [{"Comparison": "EQUALS", "Value": "AwsEc2Instance"}], "Type": [{"Comparison": "PREFIX", "Value": "TTPs/Persistence"}]}' \
+ '{"RecordState": [{ "Comparison": "EQUALS", "Value": "ACTIVE"}], "WorkflowStatus": [{"Comparison": "EQUALS", "Value": "NEW"}],"ResourceType": [{"Comparison": "EQUALS", "Value": "AwsS3Bucket"}], "Type": [{"Comparison": "EQUALS", "Value": "TTPs/Impact:S3-AnomalousBehavior.Delete"}]}' \
  --group-by-attribute "ResourceId" \
 --name $insight2 \
 --query 'InsightArn' --output text --region=$region)
