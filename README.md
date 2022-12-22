@@ -128,7 +128,27 @@ region='eu-west-2'
 insight1='usecase3-1-guarddutys3delete'
 insight2='usecase3-2-configs3versioning'
 ```
+
 运行CLI命令 Run CLI Command
+
+```
+arn1=$(aws securityhub create-insight \
+--filters \
+ '{"RecordState": [{ "Comparison": "EQUALS", "Value": "ACTIVE"}], "WorkflowStatus": [{"Comparison": "EQUALS", "Value": "NEW"}],"ResourceType": [{"Comparison": "EQUALS", "Value": "AwsEc2Instance"}], "Type": [{"Comparison": "PREFIX", "Value": "TTPs/Initial Access"}]}' \
+ --group-by-attribute "ResourceId" \
+--name $insight1 \
+--query 'InsightArn' --output text --region=$region)
+echo $arn1
+arn2=$(aws securityhub create-insight \
+--filters \
+ '{"RecordState": [{ "Comparison": "EQUALS", "Value": "ACTIVE"}], "WorkflowStatus": [{"Comparison": "EQUALS", "Value": "NEW"}],"ResourceType": [{"Comparison": "EQUALS", "Value": "AwsEc2Instance"}], "Type": [{"Comparison": "PREFIX", "Value": "TTPs/Persistence"}]}' \
+ --group-by-attribute "ResourceId" \
+--name $insight2 \
+--query 'InsightArn' --output text --region=$region)
+echo $arn2
+```
+
+
 ### Step 3 Deploy by Cloudformation Template
 参数设置 Set Paramter
 ```
@@ -137,8 +157,6 @@ templatename='Sechub-2insight-template.yaml'
 findingtype='Effects/Data Exposure/S3DataLost'
 title='SIEM Alert-S3 data lost'
 resourcetype='AwsS3Bucket'
-arn1='arn:aws:securityhub:eu-west-2:295158943844:insight/295158943844/custom/6f23f5cc-74d5-4284-bb5c-96835fb014c'
-arn2=''
 ```
 运行CLI命令 Run CLI command
 
